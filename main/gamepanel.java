@@ -4,15 +4,15 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-
 import javax.swing.JPanel;
+import entity_package.player;
 
 public class gamepanel extends JPanel implements Runnable{
     // SCREEN SETTINGS
     final int originalTileSize = 16; // 16X16 tile
     final int scale = 3;
 
-    final int tileSize = originalTileSize * scale; // 40x40 tile
+    public final int tileSize = originalTileSize * scale; // 40x40 tile
     final int maxScreenCol = 16;
     final int maxScreenRow = 12;
     final int screenWidth = tileSize * maxScreenCol; // 760 pixels
@@ -23,6 +23,7 @@ public class gamepanel extends JPanel implements Runnable{
 
     keyhandler keyH = new keyhandler();
     Thread gameThread;
+    player Player = new player(this,keyH);
 
     // Set player's default position
     int playerX = 100;
@@ -104,15 +105,7 @@ public class gamepanel extends JPanel implements Runnable{
     }
 
     public void update(){
-        if(keyH.upPressed == true){
-            playerY -= playerSpeed;
-        }else if(keyH.downPressed == true){
-            playerY += playerSpeed;
-        }else if(keyH.leftPressed == true){
-            playerX -= playerSpeed;
-        }else if(keyH.rightPressed == true){
-            playerX += playerSpeed;
-        }
+        Player.update();
     }
 
     public void paintComponent(Graphics g){
@@ -120,9 +113,7 @@ public class gamepanel extends JPanel implements Runnable{
 
         Graphics2D g2 = (Graphics2D)g;
 
-        g2.setColor(Color.white);
-
-        g2.fillRect(playerX, playerY, tileSize, tileSize);
+        Player.draw(g2);
 
         g2.dispose();
     }
