@@ -10,8 +10,8 @@ import main.gamepanel;
 
 public class TileManager {
     gamepanel gp;
-    Tile[] tile;
-    int[][] mapTileNum;
+    public Tile[] tile;
+    public int[][] mapTileNum;
 
     public TileManager(gamepanel gp) {
         this.gp = gp;
@@ -25,30 +25,42 @@ public class TileManager {
 
     public void getTileImage() {
         try {
+            //tile
             tile[0] = new Tile();
-            tile[0].image = ImageIO.read(getClass().getResourceAsStream("/assets/tile/road.png"));
+            tile[0].image = ImageIO.read(getClass().getResourceAsStream("/assets/tile/grass.png"));
 
             tile[1] = new Tile();
-            tile[1].image = ImageIO.read(getClass().getResourceAsStream("/assets/tile/footpath.png"));
+            tile[1].image = ImageIO.read(getClass().getResourceAsStream("/assets/tile/road-straight.png"));
 
             tile[2] = new Tile();
-            tile[2].image = ImageIO.read(getClass().getResourceAsStream("/assets/tile/white.png"));
+            tile[2].image = ImageIO.read(getClass().getResourceAsStream("/assets/tile/road-sideways.png"));
 
+            //building
             tile[3] = new Tile();
-            tile[3].image = ImageIO.read(getClass().getResourceAsStream("/assets/tile/red.png"));
+            tile[3].image = ImageIO.read(getClass().getResourceAsStream("/assets/tile/building-straight.png"));
+            tile[3].collision = true;
 
             tile[4] = new Tile();
-            tile[4].image = ImageIO.read(getClass().getResourceAsStream("/assets/building/building-wall-below.png"));
+            tile[4].image = ImageIO.read(getClass().getResourceAsStream("/assets/tile/building-sideways.png"));
+            tile[4].collision = true;
 
             tile[5] = new Tile();
-            tile[5].image = ImageIO.read(getClass().getResourceAsStream("/assets/building/building-wall-middle.png"));
+            tile[5].image = ImageIO.read(getClass().getResourceAsStream("/assets/tile/floor.png"));
 
+            //WALL
             tile[6] = new Tile();
-            tile[6].image = ImageIO.read(getClass().getResourceAsStream("/assets/building/building-wall-upstairs.png"));
+            tile[6].image = ImageIO.read(getClass().getResourceAsStream("/assets/tile/wall-front.png"));
+            tile[6].collision = true;
 
+            //WATER
             tile[7] = new Tile();
-            tile[7].image = ImageIO.read(getClass().getResourceAsStream("/assets/building/building-wall-top.png"));
+            tile[7].image = ImageIO.read(getClass().getResourceAsStream("/assets/tile/water.png"));
+            tile[7].collision = true;
 
+            //TREE
+            tile[8] = new Tile();
+            tile[8].image = ImageIO.read(getClass().getResourceAsStream("/assets/tile/tree.png"));
+            tile[8].collision = true;
         } catch (IOException e) {
             e.printStackTrace();
         }
