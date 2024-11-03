@@ -13,6 +13,7 @@ public class player extends entity{
 
     public final int screenX;
     public final int screenY;
+    int hasKey = 0;
 
     public player(gamepanel gp,keyhandler keyH){
         this.gp = gp;
@@ -24,6 +25,8 @@ public class player extends entity{
         solidArea = new Rectangle();
         solidArea.x = 8;
         solidArea.y = 16;
+        solidAreaDefaultX = solidArea.x;
+        solidAreaDefaultY = solidArea.y;
         solidArea.width = 32;
         solidArea.height = 32;
 
@@ -31,8 +34,8 @@ public class player extends entity{
         getPlayerImage();
     }
     public void setDefaultValues(){
-        worldX = gp.tileSize * 30;
-        worldY = gp.tileSize * 43;
+        worldX = gp.tileSize * 34;
+        worldY = gp.tileSize * 47;
         speed = 4;
         direction = "down";
     }
@@ -70,6 +73,10 @@ public class player extends entity{
             // CHECK TILE COLLISON
             collisionOn = false;
             gp.cChecker.checktile(this);
+
+            // CHECK OBJECT COLLISON
+            int objIndex = gp.cChecker.checkObject(this, true);
+            pickUpObject(objIndex);
             
             // IF COLLISION IS FALSE, PLAYER CAN MOVE
             if(collisionOn == false){
@@ -92,8 +99,31 @@ public class player extends entity{
                 spriteCounter = 0;
             }            
         }
-
     }
+
+    public void pickUpObject(int i){
+        if(i != 999){
+            String objectName = gp.obj[i].name;
+
+            switch (objectName) {
+                case "Paper grade F":
+                    hasKey++;
+                    gp.obj[i] = null;
+                    System.out.println("Paper: "+hasKey);
+                    break;
+                case "Paper not find":
+                    if(hasKey > 0){
+                        gp.obj[i] = null;
+                        hasKey--;
+                    }
+                    System.out.println("Paper: "+hasKey);
+                    break;
+                case "Paper grade A":
+                    break;
+            }
+        }
+    }
+
     public void draw(Graphics2D g2){
 //      g2.setColor(Color.red);
 //      g2.fillRect(x, y, gp.tileSize, gp.tileSize);
