@@ -23,25 +23,31 @@ public class gamepanel extends JPanel implements Runnable{
     //WORLD SETTING
     public final int maxWorldCol = 50;
     public final int maxWorldRow = 50;
-    public final int worldWidth = tileSize * maxWorldCol;
-    public final int worldHeight = tileSize * maxWorldRow;
+    public final int worldWidgth = tileSize * maxWorldCol;
+    public final int worldHeight = tileSize * maxScreenRow;
 
     // FPS
     int FPS = 60;
 
+    // SYSTEM
     TileManager tileM = new TileManager(this);
-    keyhandler keyH = new keyhandler();
-    Thread gameThread;
+    keyhandler keyH = new keyhandler(this);
+    sound music = new sound();
+    sound se = new sound();
+    
     public collisionchecker cChecker = new collisionchecker(this);
     public assetsetter aSetter = new assetsetter(this);
+    public ui ui = new ui(this);
+    Thread gameThread;
+
+    // ENTITY AND OBJECT
     public player Player = new player(this,keyH);
     public superobject obj[] = new superobject[10];
 
-
-    // Set player's default position
-    int playerX = 100;
-    int playerY = 100;
-    int playerSpeed = 4;
+    // GAME STATE
+    public int gameState;
+    public final int playState = 1;
+    public final int pauseState = 2;
 
     public gamepanel(){
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
@@ -53,6 +59,9 @@ public class gamepanel extends JPanel implements Runnable{
 
     public void setupGame(){
         aSetter.setObject();
+        playMusic(0);
+//      stopMusic();
+        gameState = playState;
     }
 
     public void startGameThread(){
@@ -122,7 +131,13 @@ public class gamepanel extends JPanel implements Runnable{
     }
 
     public void update(){
-        Player.update();
+        if(gameState == playState){
+            Player.update();
+        }
+        if(gameState == pauseState){
+            // nothing
+        }
+        
     }
 
     public void paintComponent(Graphics g){
@@ -143,6 +158,21 @@ public class gamepanel extends JPanel implements Runnable{
         // PLAYER
         Player.draw(g2);
 
+        // UI
+        ui.draw(g2);
+
         g2.dispose();
+    }
+    public void playMusic(int i){
+        music.setFile(i);
+        music.play();
+        music.loop();
+    }
+    public void stopMusic(){
+        music.stop();
+    }
+    public void playSE(int i){
+        se.setFile(i);
+        se.play();
     }
 }

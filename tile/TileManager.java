@@ -74,7 +74,7 @@ public class TileManager {
             int col = 0;
             int row = 0;
 
-            while (row < gp.maxWorldRow) { // วนลูปในแนวแถว
+            while (row < gp.maxWorldRow) { 
                 String line = br.readLine();
                 String[] numbers = line.split(" ");
                 
