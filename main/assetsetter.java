@@ -47,5 +47,9 @@ public class assetsetter {
         gp.obj[8] = new obj_boots();
         gp.obj[8].worldX = 5 * gp.tileSize;
         gp.obj[8].worldY = 11 * gp.tileSize;
+
+        gp.obj[9] = new obj_boots();
+        gp.obj[9].worldX = 7 * gp.tileSize;
+        gp.obj[9].worldY = 43 * gp.tileSize;
     }
 }

@@ -79,13 +79,13 @@ public class ui {
             drawTitleScreen();
         }
         // PLAY STATE
-        if (gp.gameState == gp.playState) {
+        if (gp.gameState == gp.playState && !gameFinished) {
             drawPlayerLife();
             playTime += (double) 1 / 60;
         }
 
         // PAUSE STATE
-        else if (gp.gameState == gp.pauseState) {
+        else if (gp.gameState == gp.pauseState && !gameFinished) {
             drawPauseScreen();
         }
 
@@ -114,9 +114,9 @@ public class ui {
     public void drawPlayerLife() {
         int x = gp.tileSize / 2;
         int y = gp.tileSize / 2;
-        int spacing = 10; 
-        int heartWidth = gp.tileSize - 10; 
-        int heartHeight = gp.tileSize - 10; 
+        int spacing = 10;
+        int heartWidth = gp.tileSize - 10;
+        int heartHeight = gp.tileSize - 10;
         int i = 0;
 
         // DRAW MAX HEART
@@ -140,7 +140,7 @@ public class ui {
             }
             i++;
             // Add spacing here
-            x += heartWidth + spacing; 
+            x += heartWidth + spacing;
         }
     }
 
