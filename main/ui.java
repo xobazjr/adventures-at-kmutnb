@@ -101,11 +101,11 @@ public class ui {
             g2.drawImage(keyImage, gp.tileSize / 2, gp.tileSize / 2, gp.tileSize, gp.tileSize, null);
             g2.drawString("x = " + gp.Player.hasKey + "/6", 80, 55);
 
-            // TIME แสดงเวลาบนหน้าจอ
+            // TIME
             g2.drawString("Time: " + dFormat.format(playTime), gp.tileSize * 13, 65);
 
             // MANUAL
-            g2.drawString("PAUSE: P",gp.tileSize * 13, gp.tileSize * 11);
+            g2.drawString("PAUSE: P", gp.tileSize * 13, gp.tileSize * 11);
 
             // MESSAGE
             if (messageOn) {

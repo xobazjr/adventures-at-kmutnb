@@ -25,7 +25,7 @@ public class TileManager {
 
     public void getTileImage() {
         try {
-            //tile
+            // tile
             tile[0] = new Tile();
             tile[0].image = ImageIO.read(getClass().getResourceAsStream("/assets/tile/grass.png"));
 
@@ -35,7 +35,7 @@ public class TileManager {
             tile[2] = new Tile();
             tile[2].image = ImageIO.read(getClass().getResourceAsStream("/assets/tile/road-sideways.png"));
 
-            //building
+            // building
             tile[3] = new Tile();
             tile[3].image = ImageIO.read(getClass().getResourceAsStream("/assets/tile/building-straight.png"));
             tile[3].collision = true;
@@ -47,17 +47,17 @@ public class TileManager {
             tile[5] = new Tile();
             tile[5].image = ImageIO.read(getClass().getResourceAsStream("/assets/tile/floor.png"));
 
-            //WALL
+            // WALL
             tile[6] = new Tile();
             tile[6].image = ImageIO.read(getClass().getResourceAsStream("/assets/tile/wall-front.png"));
             tile[6].collision = true;
 
-            //WATER
+            // WATER
             tile[7] = new Tile();
             tile[7].image = ImageIO.read(getClass().getResourceAsStream("/assets/tile/water.png"));
             tile[7].collision = true;
 
-            //TREE
+            // TREE
             tile[8] = new Tile();
             tile[8].image = ImageIO.read(getClass().getResourceAsStream("/assets/tile/tree.png"));
             tile[8].collision = true;
@@ -74,10 +74,10 @@ public class TileManager {
             int col = 0;
             int row = 0;
 
-            while (row < gp.maxWorldRow) { 
+            while (row < gp.maxWorldRow) {
                 String line = br.readLine();
                 String[] numbers = line.split(" ");
-                
+
                 for (col = 0; col < gp.maxWorldCol; col++) {
                     int num = Integer.parseInt(numbers[col]);
                     mapTileNum[col][row] = num;
@@ -104,9 +104,9 @@ public class TileManager {
             int screenY = worldY - gp.Player.worldY + gp.Player.screenY;
 
             if (worldX + gp.tileSize > gp.Player.worldX - gp.Player.screenX &&
-                worldX - gp.tileSize < gp.Player.worldX + gp.Player.screenX &&
-                worldY + gp.tileSize > gp.Player.worldY - gp.Player.screenY &&
-                worldY - gp.tileSize < gp.Player.worldY + gp.Player.screenY) {
+                    worldX - gp.tileSize < gp.Player.worldX + gp.Player.screenX &&
+                    worldY + gp.tileSize > gp.Player.worldY - gp.Player.screenY &&
+                    worldY - gp.tileSize < gp.Player.worldY + gp.Player.screenY) {
 
                 g2.drawImage(tile[tileNum].image, screenX, screenY, gp.tileSize, gp.tileSize, null);
             }

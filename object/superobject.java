@@ -15,14 +15,14 @@ public class superobject {
     public int solidAreaDefaultX = 0;
     public int solidAreaDefaultY = 0;
 
-    public void draw(Graphics2D g2, gamepanel gp){
+    public void draw(Graphics2D g2, gamepanel gp) {
         int screenX = worldX - gp.Player.worldX + gp.Player.screenX;
         int screenY = worldY - gp.Player.worldY + gp.Player.screenY;
 
         if (worldX + gp.tileSize > gp.Player.worldX - gp.Player.screenX &&
-            worldX - gp.tileSize < gp.Player.worldX + gp.Player.screenX &&
-            worldY + gp.tileSize > gp.Player.worldY - gp.Player.screenY &&                
-            worldY - gp.tileSize < gp.Player.worldY + gp.Player.screenY) {
+                worldX - gp.tileSize < gp.Player.worldX + gp.Player.screenX &&
+                worldY + gp.tileSize > gp.Player.worldY - gp.Player.screenY &&
+                worldY - gp.tileSize < gp.Player.worldY + gp.Player.screenY) {
 
             g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null);
         }

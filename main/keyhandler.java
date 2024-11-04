@@ -3,13 +3,11 @@ package main;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import javax.swing.plaf.basic.BasicComboBoxUI.KeyHandler;
-
 public class keyhandler implements KeyListener {
     gamepanel gp;
     public boolean upPressed, downPressed, leftPressed, rightPressed;
 
-    public keyhandler(gamepanel gp){
+    public keyhandler(gamepanel gp) {
         this.gp = gp;
     }
 
@@ -35,10 +33,9 @@ public class keyhandler implements KeyListener {
             rightPressed = true;
         }
         if (code == KeyEvent.VK_P) {
-            if(gp.gameState == gp.playState){
+            if (gp.gameState == gp.playState) {
                 gp.gameState = gp.pauseState;
-            }
-            else if(gp.gameState == gp.pauseState){
+            } else if (gp.gameState == gp.pauseState) {
                 gp.gameState = gp.playState;
             }
         }

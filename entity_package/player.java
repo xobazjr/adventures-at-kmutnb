@@ -150,12 +150,12 @@ public class player extends entity {
                     }, 5000);
                     break;
                 case "Sathit":
-                    if(hasKey >= 6){
+                    if (hasKey >= 6) {
                         gp.ui.gameFinished = true;
                         gp.stopMusic();
-                        gp.playSE(3); 
-                    }else{
-                        gp.ui.showMessage("You need to find the paper: "+hasKey+"/6");
+                        gp.playSE(3);
+                    } else {
+                        gp.ui.showMessage("You need to find the paper: " + hasKey + "/6");
                     }
                     break;
             }

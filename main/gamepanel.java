@@ -9,7 +9,7 @@ import entity_package.player;
 import object.superobject;
 import tile.TileManager;
 
-public class gamepanel extends JPanel implements Runnable{
+public class gamepanel extends JPanel implements Runnable {
     // SCREEN SETTINGS
     final int originalTileSize = 16; // 16X16 tile
     final int scale = 3;
@@ -20,7 +20,7 @@ public class gamepanel extends JPanel implements Runnable{
     public final int screenWidth = tileSize * maxScreenCol; // 760 pixels
     public final int screenHeight = tileSize * maxScreenRow; // 576 pixels
 
-    //WORLD SETTING
+    // WORLD SETTING
     public final int maxWorldCol = 50;
     public final int maxWorldRow = 50;
     public final int worldWidgth = tileSize * maxWorldCol;
@@ -34,14 +34,14 @@ public class gamepanel extends JPanel implements Runnable{
     keyhandler keyH = new keyhandler(this);
     sound music = new sound();
     sound se = new sound();
-    
+
     public collisionchecker cChecker = new collisionchecker(this);
     public assetsetter aSetter = new assetsetter(this);
     public ui ui = new ui(this);
     Thread gameThread;
 
     // ENTITY AND OBJECT
-    public player Player = new player(this,keyH);
+    public player Player = new player(this, keyH);
     public superobject obj[] = new superobject[10];
 
     // GAME STATE
@@ -49,7 +49,7 @@ public class gamepanel extends JPanel implements Runnable{
     public final int playState = 1;
     public final int pauseState = 2;
 
-    public gamepanel(){
+    public gamepanel() {
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
         this.setBackground(Color.black);
         this.setDoubleBuffered(true);
@@ -57,100 +57,100 @@ public class gamepanel extends JPanel implements Runnable{
         this.setFocusable(true);
     }
 
-    public void setupGame(){
+    public void setupGame() {
         aSetter.setObject();
         playMusic(0);
-//      stopMusic();
+        // stopMusic();
         gameState = playState;
     }
 
-    public void startGameThread(){
+    public void startGameThread() {
         gameThread = new Thread(this);
         gameThread.start();
     }
 
     @Override
-//    public void run() {
-//        double drawInterval = 1000000000/FPS; // 0.01666 seconds
-//        double nextDrawTime = System.nanoTime() + drawInterval;
-//
-//        while(gameThread != null){
-//
-//           // 1 UPDATE: update information such as character positions
-//           update();
-//
-//           // 2 DRAW: draw the screen with the updated information
-//           repaint();
-//
-//            try {
-//                double remainingTime = nextDrawTime - System.nanoTime();
-//                remainingTime = remainingTime / 1000000;
-//
-//                if(remainingTime < 0){
-//                    remainingTime = 0;
-//                }
-//
-//                Thread.sleep((long) remainingTime);
-//
-//                nextDrawTime += drawInterval;
-//            } catch (InterruptedException e) {
-//                // TODO Auto-generated catch block
-//                e.printStackTrace();
-//            }
-//        }
-//    }
+    // public void run() {
+    // double drawInterval = 1000000000/FPS; // 0.01666 seconds
+    // double nextDrawTime = System.nanoTime() + drawInterval;
+    //
+    // while(gameThread != null){
+    //
+    // // 1 UPDATE: update information such as character positions
+    // update();
+    //
+    // // 2 DRAW: draw the screen with the updated information
+    // repaint();
+    //
+    // try {
+    // double remainingTime = nextDrawTime - System.nanoTime();
+    // remainingTime = remainingTime / 1000000;
+    //
+    // if(remainingTime < 0){
+    // remainingTime = 0;
+    // }
+    //
+    // Thread.sleep((long) remainingTime);
+    //
+    // nextDrawTime += drawInterval;
+    // } catch (InterruptedException e) {
+    // // TODO Auto-generated catch block
+    // e.printStackTrace();
+    // }
+    // }
+    // }
 
-    public void run(){
-        double drawInterval = 1000000000/FPS;
+    public void run() {
+        double drawInterval = 1000000000 / FPS;
         double delta = 0;
         long lastTime = System.nanoTime();
         long currentTime;
         long timer = 0;
         long drawCount = 0;
 
-        while(gameThread != null){
+        while (gameThread != null) {
             currentTime = System.nanoTime();
 
             delta += (currentTime - lastTime) / drawInterval;
             timer += (currentTime - lastTime);
             lastTime = currentTime;
 
-            if(delta >= 1){
+            if (delta >= 1) {
                 update();
                 repaint();
                 delta--;
-                drawCount++;      
+                drawCount++;
             }
-            
-            if(timer >= 1000000000){
-                System.out.println("FPS: "+ drawCount);
+
+            if (timer >= 1000000000) {
+                System.out.println("FPS: " + drawCount);
                 drawCount = 0;
                 timer = 0;
             }
         }
     }
 
-    public void update(){
-        if(gameState == playState){
+    public void update() {
+        if (gameState == playState) {
             Player.update();
         }
-        if(gameState == pauseState){
+        if (gameState == pauseState) {
             // nothing
         }
-        
+
     }
 
-    public void paintComponent(Graphics g){
+    public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        Graphics2D g2 = (Graphics2D)g;
+        Graphics2D g2 = (Graphics2D) g;
 
         // TILE
         tileM.draw(g2);
 
         // OBJECT
-        for(int i=0;i<obj.length;i++){
-            if(obj[i] != null){
+        for (int i = 0; i < obj.length; i++) {
+            if (obj[i] != null) {
                 obj[i].draw(g2, this);
             }
         }
@@ -163,15 +163,18 @@ public class gamepanel extends JPanel implements Runnable{
 
         g2.dispose();
     }
-    public void playMusic(int i){
+
+    public void playMusic(int i) {
         music.setFile(i);
         music.play();
         music.loop();
     }
-    public void stopMusic(){
+
+    public void stopMusic() {
         music.stop();
     }
-    public void playSE(int i){
+
+    public void playSE(int i) {
         se.setFile(i);
         se.play();
     }
