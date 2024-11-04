@@ -101,6 +101,7 @@ public class ui {
             g2.drawString("Time: " + dFormat.format(playTime), gp.tileSize * 13, 65);
 
             // MANUAL
+            g2.drawString("MUTE: M", gp.tileSize * 13, gp.tileSize * 10);
             g2.drawString("PAUSE: P", gp.tileSize * 13, gp.tileSize * 11);
 
             // MESSAGE
