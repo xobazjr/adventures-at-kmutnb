@@ -15,3 +15,12 @@ This project is a part of Object Oriented Programming course created by Mr.Teera
 <img hight="100" width="100" src="https://github.com/xobazjr/adventures-at-kmutnb/blob/main/assets/tile/grass.png"> <img hight="100" width="100" src="https://github.com/xobazjr/adventures-at-kmutnb/blob/main/assets/tile/road-sideways.png"> <img hight="100" width="100" src="https://github.com/xobazjr/adventures-at-kmutnb/blob/main/assets/tile/road-straight.png">
 
 <img hight="100" width="100" src="https://github.com/xobazjr/adventures-at-kmutnb/blob/main/assets/tile/tree.png"> <img hight="100" width="100" src="https://github.com/xobazjr/adventures-at-kmutnb/blob/main/assets/tile/wall-front.png"> <img hight="100" width="100" src="https://github.com/xobazjr/adventures-at-kmutnb/blob/main/assets/tile/water.png">
+
+## Hit Point
+<img hight="100" width="100" src="https://github.com/xobazjr/adventures-at-kmutnb/blob/main/assets/objects/heart-full.png"> <img hight="100" width="100" src="https://github.com/xobazjr/adventures-at-kmutnb/blob/main/assets/objects/heart-half.png"> <img hight="100" width="100" src="https://github.com/xobazjr/adventures-at-kmutnb/blob/main/assets/objects/heart-empty.png">
+
+<br/>
+<br/>
+
+### Credit
+I study with [RyiSnow](https://www.youtube.com/@RyiSnow)
