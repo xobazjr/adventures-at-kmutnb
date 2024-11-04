@@ -7,7 +7,7 @@ import java.util.TimerTask;
 
 public class keyhandler implements KeyListener {
     gamepanel gp;
-    public boolean upPressed, downPressed, leftPressed, rightPressed, pauseMusic;
+    public boolean upPressed, downPressed, leftPressed, rightPressed, pauseMusic=true;
 
     public keyhandler(gamepanel gp) {
         this.gp = gp;
