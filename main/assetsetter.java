@@ -27,8 +27,8 @@ public class assetsetter {
         gp.obj[2].worldY = 43 * gp.tileSize;
 
         gp.obj[3] = new obj_key();
-        gp.obj[3].worldX = 13 * gp.tileSize;
-        gp.obj[3].worldY = 34 * gp.tileSize;
+        gp.obj[3].worldX = 42 * gp.tileSize;
+        gp.obj[3].worldY = 24 * gp.tileSize;
 
         gp.obj[4] = new obj_key();
         gp.obj[4].worldX = 2 * gp.tileSize;
@@ -381,5 +381,49 @@ public class assetsetter {
         gp.obj[91] = new obj_faii();
         gp.obj[91].worldX = 16 * gp.tileSize;
         gp.obj[91].worldY = 17 * gp.tileSize;
+
+        gp.obj[92] = new obj_spike();
+        gp.obj[92].worldX = 43 * gp.tileSize;
+        gp.obj[92].worldY = 24 * gp.tileSize;
+
+        gp.obj[93] = new obj_spike();
+        gp.obj[93].worldX = 42 * gp.tileSize;
+        gp.obj[93].worldY = 26 * gp.tileSize;
+
+        gp.obj[94] = new obj_spike();
+        gp.obj[94].worldX = 43 * gp.tileSize;
+        gp.obj[94].worldY = 27 * gp.tileSize;
+
+        gp.obj[95] = new obj_spike();
+        gp.obj[95].worldX = 42 * gp.tileSize;
+        gp.obj[95].worldY = 29 * gp.tileSize;
+
+        gp.obj[96] = new obj_spike();
+        gp.obj[96].worldX = 43 * gp.tileSize;
+        gp.obj[96].worldY = 30 * gp.tileSize;
+
+        gp.obj[97] = new obj_spike();
+        gp.obj[97].worldX = 44 * gp.tileSize;
+        gp.obj[97].worldY = 26 * gp.tileSize;
+
+        gp.obj[98] = new obj_spike();
+        gp.obj[98].worldX = 44 * gp.tileSize;
+        gp.obj[98].worldY = 29 * gp.tileSize;
+
+        gp.obj[99] = new obj_faii();
+        gp.obj[99].worldX = 45 * gp.tileSize;
+        gp.obj[99].worldY = 28 * gp.tileSize;
+
+        gp.obj[100] = new obj_spike();
+        gp.obj[100].worldX = 45 * gp.tileSize;
+        gp.obj[100].worldY = 25 * gp.tileSize;
+
+        gp.obj[101] = new obj_spike();
+        gp.obj[101].worldX = 46 * gp.tileSize;
+        gp.obj[101].worldY = 27 * gp.tileSize;
+
+        gp.obj[102] = new obj_spike();
+        gp.obj[102].worldX = 46 * gp.tileSize;
+        gp.obj[102].worldY = 29 * gp.tileSize;
     }
 }
