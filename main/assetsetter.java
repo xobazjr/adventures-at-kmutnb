@@ -310,7 +310,7 @@ public class assetsetter {
         gp.obj[73].worldX = 45 * gp.tileSize;
         gp.obj[73].worldY = 8 * gp.tileSize;
 
-        gp.obj[74] = new obj_spike();
+        gp.obj[74] = new obj_faii();
         gp.obj[74].worldX = 44 * gp.tileSize;
         gp.obj[74].worldY = 7 * gp.tileSize;
 

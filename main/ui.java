@@ -219,7 +219,6 @@ public class ui {
         int y;
         if (gp.Player.ngam) {
             gp.stopMusic();
-            gp.playSE(7);
             text = "You were bitten to death!";
             textLength = (int) g2.getFontMetrics().getStringBounds(text, g2).getWidth();
             x = gp.screenWidth / 2 - textLength / 2;

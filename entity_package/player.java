@@ -190,9 +190,13 @@ public class player extends entity {
                     break;
                 case "Faii dek ped":
                     if (gp.Player.start) {
-                        gp.Player.life -= gp.Player.maxLife;
-                        ngam = true;
-                        gp.ui.gameFinished = true;
+                        gp.playSE(7);
+                        gp.Player.life -= 6;
+                        if(gp.Player.life <= 0){
+                            ngam = true;
+                            gp.ui.gameFinished = true;
+                        }
+
                     }
                     break;
             }

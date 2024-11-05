@@ -5,7 +5,7 @@ import java.awt.event.KeyListener;
 
 public class keyhandler implements KeyListener {
     gamepanel gp;
-    public boolean upPressed, downPressed, leftPressed, rightPressed, pauseMusic=true;
+    public boolean upPressed, downPressed, leftPressed, rightPressed, pauseMusic=true, godmode=false;
 
     public keyhandler(gamepanel gp) {
         this.gp = gp;
@@ -75,6 +75,19 @@ public class keyhandler implements KeyListener {
                 gp.ui.showMessage("Open music");
                 gp.music.play();
                 pauseMusic = true;
+            }
+        }
+        if (code == KeyEvent.VK_G) {
+            if(godmode){
+                godmode = false;
+                gp.Player.maxLife = 6;
+                gp.Player.life = gp.Player.maxLife;
+                gp.Player.speed -= 5;
+            }else{
+                godmode = true;
+                gp.Player.maxLife = 500;
+                gp.Player.life = gp.Player.maxLife;
+                gp.Player.speed += 5;
             }
         }
 
