@@ -89,7 +89,7 @@ public class assetsetter {
         gp.obj[18] = new obj_spike();
         gp.obj[18].worldX = 17 * gp.tileSize;
         gp.obj[18].worldY = 43 * gp.tileSize;
-        
+
         gp.obj[19] = new obj_spike();
         gp.obj[19].worldX = 17 * gp.tileSize;
         gp.obj[19].worldY = 44 * gp.tileSize;
@@ -221,7 +221,7 @@ public class assetsetter {
         gp.obj[51] = new obj_spike();
         gp.obj[51].worldX = 27 * gp.tileSize;
         gp.obj[51].worldY = 17 * gp.tileSize;
-        
+
         gp.obj[52] = new obj_spike();
         gp.obj[52].worldX = 28 * gp.tileSize;
         gp.obj[52].worldY = 15 * gp.tileSize;

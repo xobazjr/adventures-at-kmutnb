@@ -5,7 +5,7 @@ import java.awt.event.KeyListener;
 
 public class keyhandler implements KeyListener {
     gamepanel gp;
-    public boolean upPressed, downPressed, leftPressed, rightPressed, pauseMusic=true, godmode=false;
+    public boolean upPressed, downPressed, leftPressed, rightPressed, pauseMusic = true, pause = false, godmode = false;
 
     public keyhandler(gamepanel gp) {
         this.gp = gp;
@@ -60,35 +60,47 @@ public class keyhandler implements KeyListener {
         if (code == KeyEvent.VK_P) {
             if (gp.gameState == gp.playState) {
                 gp.gameState = gp.pauseState;
-                gp.music.stop();
+                pause = true;
+                if (pauseMusic) {
+                    gp.stopMusic();
+                }
             } else if (gp.gameState == gp.pauseState) {
                 gp.gameState = gp.playState;
-                gp.music.play();
+                pause = false;
+                if (pauseMusic) {
+                    gp.playMusic(0);
+                }
             }
         }
         if (code == KeyEvent.VK_M) {
-            if (pauseMusic) {
-                gp.ui.showMessage("Mute music");
-                gp.music.stop();
-                pauseMusic = false;
-            } else {
-                gp.ui.showMessage("Open music");
-                gp.music.play();
-                pauseMusic = true;
+            if (!pause) {
+                if (pauseMusic) {
+                    gp.ui.showMessage("Mute music");
+                    gp.stopMusic();
+                    pauseMusic = false;
+                } else {
+                    gp.ui.showMessage("Open music");
+                    gp.playMusic(0);
+                    pauseMusic = true;
+                }
             }
+
         }
         if (code == KeyEvent.VK_G) {
-            if(godmode){
-                godmode = false;
-                gp.Player.maxLife = 6;
-                gp.Player.life = gp.Player.maxLife;
-                gp.Player.speed -= 5;
-            }else{
-                godmode = true;
-                gp.Player.maxLife = 500;
-                gp.Player.life = gp.Player.maxLife;
-                gp.Player.speed += 5;
+            if (!pause) {
+                if (godmode) {
+                    godmode = false;
+                    gp.Player.maxLife = 6;
+                    gp.Player.life = gp.Player.maxLife;
+                    gp.Player.speed -= 5;
+                } else {
+                    godmode = true;
+                    gp.Player.maxLife = 500;
+                    gp.Player.life = gp.Player.maxLife;
+                    gp.Player.speed += 5;
+                }
             }
+
         }
 
     }
@@ -110,5 +122,4 @@ public class keyhandler implements KeyListener {
             rightPressed = false;
         }
     }
-
 }
