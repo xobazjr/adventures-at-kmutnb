@@ -18,6 +18,7 @@ public class player extends entity {
     public final int screenY;
     public int hasKey = 0;
     public boolean start = false;
+    public boolean ngam = false;
 
     public player(gamepanel gp, keyhandler keyH) {
         this.gp = gp;
@@ -168,6 +169,7 @@ public class player extends entity {
                         gp.stopMusic();
                         gp.playSE(3);
                     } else {
+                        gp.playSE(6);
                         gp.ui.showMessage("You need to find the paper: " + hasKey + "/6");
                     }
                     break;
@@ -185,7 +187,13 @@ public class player extends entity {
                             gp.ui.showMessage("Oh shit");
                         }
                     }
-
+                    break;
+                case "Faii dek ped":
+                    if (gp.Player.start) {
+                        gp.Player.life -= gp.Player.maxLife;
+                        ngam = true;
+                        gp.ui.gameFinished = true;
+                    }
                     break;
             }
         }

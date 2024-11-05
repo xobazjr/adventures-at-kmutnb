@@ -17,6 +17,8 @@ public class sound {
         soundURL[3] = getClass().getResource("/assets/sound/finished-sound.wav");
         soundURL[4] = getClass().getResource("/assets/sound/dead.wav");
         soundURL[5] = getClass().getResource("/assets/sound/damage.wav");
+        soundURL[6] = getClass().getResource("/assets/sound/npc.wav");
+        soundURL[7] = getClass().getResource("/assets/sound/ngam!.wav");
     }
 
     public void setFile(int i) {

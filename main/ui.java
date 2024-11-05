@@ -120,7 +120,7 @@ public class ui {
             g2.drawString("MUTE: M", gp.tileSize * 13, gp.tileSize * 10);
             g2.drawString("PAUSE: P", gp.tileSize * 13, gp.tileSize * 11);
 
-            //SHOW MESSAGE EVENT
+            // SHOW MESSAGE EVENT
             g2.drawString("Looking for a teacher", (gp.tileSize / 2) * 11, gp.tileSize);
         }
 
@@ -217,33 +217,42 @@ public class ui {
         int textLength;
         int x;
         int y;
-
-        if (gp.Player.life <= 0) {
+        if (gp.Player.ngam) {
             gp.stopMusic();
-            gp.playSE(4);
-            text = "You dead!";
+            gp.playSE(7);
+            text = "You were bitten to death!";
             textLength = (int) g2.getFontMetrics().getStringBounds(text, g2).getWidth();
             x = gp.screenWidth / 2 - textLength / 2;
             y = (gp.screenHeight / 2 - gp.tileSize / 2) - 20;
             g2.drawString(text, x, y);
         } else {
-            text = "You don't get an F anymore!";
-            textLength = (int) g2.getFontMetrics().getStringBounds(text, g2).getWidth();
-            x = gp.screenWidth / 2 - textLength / 2;
-            y = gp.screenHeight / 2 - gp.tileSize;
-            g2.drawString(text, x, y);
+            if (gp.Player.life <= 0) {
+                gp.stopMusic();
+                gp.playSE(4);
+                text = "You dead!";
+                textLength = (int) g2.getFontMetrics().getStringBounds(text, g2).getWidth();
+                x = gp.screenWidth / 2 - textLength / 2;
+                y = (gp.screenHeight / 2 - gp.tileSize / 2) - 20;
+                g2.drawString(text, x, y);
+            } else {
+                text = "You don't get an F anymore!";
+                textLength = (int) g2.getFontMetrics().getStringBounds(text, g2).getWidth();
+                x = gp.screenWidth / 2 - textLength / 2;
+                y = gp.screenHeight / 2 - gp.tileSize;
+                g2.drawString(text, x, y);
 
-            text = "Your Time is " + dFormat.format(playTime) + "!";
-            textLength = (int) g2.getFontMetrics().getStringBounds(text, g2).getWidth();
-            x = gp.screenWidth / 2 - textLength / 2;
-            y = gp.screenHeight / 2 + gp.tileSize * 3;
-            g2.drawString(text, x, y);
+                text = "Your Time is " + dFormat.format(playTime) + "!";
+                textLength = (int) g2.getFontMetrics().getStringBounds(text, g2).getWidth();
+                x = gp.screenWidth / 2 - textLength / 2;
+                y = gp.screenHeight / 2 + gp.tileSize * 3;
+                g2.drawString(text, x, y);
 
-            text = "Congratulations!";
-            textLength = (int) g2.getFontMetrics().getStringBounds(text, g2).getWidth();
-            x = gp.screenWidth / 2 - textLength / 2;
-            y = gp.screenHeight / 2 + gp.tileSize;
-            g2.drawString(text, x, y);
+                text = "Congratulations!";
+                textLength = (int) g2.getFontMetrics().getStringBounds(text, g2).getWidth();
+                x = gp.screenWidth / 2 - textLength / 2;
+                y = gp.screenHeight / 2 + gp.tileSize;
+                g2.drawString(text, x, y);
+            }
         }
 
     }

@@ -1,6 +1,7 @@
 package main;
 
 import object.obj_boots;
+import object.obj_faii;
 import object.obj_key;
 import object.obj_sathit;
 import object.obj_spike;
@@ -372,5 +373,13 @@ public class assetsetter {
         gp.obj[89] = new obj_spike();
         gp.obj[89].worldX = 41 * gp.tileSize;
         gp.obj[89].worldY = 46 * gp.tileSize;
+
+        gp.obj[90] = new obj_faii();
+        gp.obj[90].worldX = 5 * gp.tileSize;
+        gp.obj[90].worldY = 24 * gp.tileSize;
+
+        gp.obj[91] = new obj_faii();
+        gp.obj[91].worldX = 16 * gp.tileSize;
+        gp.obj[91].worldY = 17 * gp.tileSize;
     }
 }
