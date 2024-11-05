@@ -120,5 +120,129 @@ public class assetsetter {
         gp.obj[26] = new obj_spike();
         gp.obj[26].worldX = 41 * gp.tileSize;
         gp.obj[26].worldY = 43 * gp.tileSize;
+
+        gp.obj[27] = new obj_spike();
+        gp.obj[27].worldX = 36 * gp.tileSize;
+        gp.obj[27].worldY = 15 * gp.tileSize;
+
+        gp.obj[28] = new obj_spike();
+        gp.obj[28].worldX = 34 * gp.tileSize;
+        gp.obj[28].worldY = 17 * gp.tileSize;
+
+        gp.obj[29] = new obj_spike();
+        gp.obj[29].worldX = 35 * gp.tileSize;
+        gp.obj[29].worldY = 16 * gp.tileSize;
+
+        gp.obj[30] = new obj_spike();
+        gp.obj[30].worldX = 34 * gp.tileSize;
+        gp.obj[30].worldY = 15 * gp.tileSize;
+
+        gp.obj[31] = new obj_spike();
+        gp.obj[31].worldX = 36 * gp.tileSize;
+        gp.obj[31].worldY = 18 * gp.tileSize;
+
+        gp.obj[32] = new obj_spike();
+        gp.obj[32].worldX = 32 * gp.tileSize;
+        gp.obj[32].worldY = 18 * gp.tileSize;
+
+        gp.obj[33] = new obj_spike();
+        gp.obj[33].worldX = 31 * gp.tileSize;
+        gp.obj[33].worldY = 17 * gp.tileSize;
+
+        gp.obj[34] = new obj_spike();
+        gp.obj[34].worldX = 32 * gp.tileSize;
+        gp.obj[34].worldY = 16 * gp.tileSize;
+
+        gp.obj[35] = new obj_spike();
+        gp.obj[35].worldX = 33 * gp.tileSize;
+        gp.obj[35].worldY = 14 * gp.tileSize;
+
+        gp.obj[36] = new obj_spike();
+        gp.obj[36].worldX = 32 * gp.tileSize;
+        gp.obj[36].worldY = 13 * gp.tileSize;
+
+        gp.obj[37] = new obj_spike();
+        gp.obj[37].worldX = 31 * gp.tileSize;
+        gp.obj[37].worldY = 15 * gp.tileSize;
+
+        gp.obj[38] = new obj_spike();
+        gp.obj[38].worldX = 19 * gp.tileSize;
+        gp.obj[38].worldY = 16 * gp.tileSize;
+
+        gp.obj[39] = new obj_spike();
+        gp.obj[39].worldX = 20 * gp.tileSize;
+        gp.obj[39].worldY = 18 * gp.tileSize;
+
+        gp.obj[40] = new obj_spike();
+        gp.obj[40].worldX = 21 * gp.tileSize;
+        gp.obj[40].worldY = 17 * gp.tileSize;
+
+        gp.obj[41] = new obj_spike();
+        gp.obj[41].worldX = 22 * gp.tileSize;
+        gp.obj[41].worldY = 18 * gp.tileSize;
+
+        gp.obj[42] = new obj_spike();
+        gp.obj[42].worldX = 21 * gp.tileSize;
+        gp.obj[42].worldY = 15 * gp.tileSize;
+
+        gp.obj[43] = new obj_spike();
+        gp.obj[43].worldX = 23 * gp.tileSize;
+        gp.obj[43].worldY = 15 * gp.tileSize;
+
+        gp.obj[44] = new obj_spike();
+        gp.obj[44].worldX = 23 * gp.tileSize;
+        gp.obj[44].worldY = 17 * gp.tileSize;
+
+        gp.obj[45] = new obj_spike();
+        gp.obj[45].worldX = 24 * gp.tileSize;
+        gp.obj[45].worldY = 13 * gp.tileSize;
+
+        gp.obj[46] = new obj_spike();
+        gp.obj[46].worldX = 25 * gp.tileSize;
+        gp.obj[46].worldY = 14 * gp.tileSize;
+
+        gp.obj[47] = new obj_spike();
+        gp.obj[47].worldX = 25 * gp.tileSize;
+        gp.obj[47].worldY = 16 * gp.tileSize;
+
+        gp.obj[48] = new obj_spike();
+        gp.obj[48].worldX = 25 * gp.tileSize;
+        gp.obj[48].worldY = 18 * gp.tileSize;
+
+        gp.obj[49] = new obj_spike();
+        gp.obj[49].worldX = 26 * gp.tileSize;
+        gp.obj[49].worldY = 15 * gp.tileSize;
+
+        gp.obj[50] = new obj_spike();
+        gp.obj[50].worldX = 27 * gp.tileSize;
+        gp.obj[50].worldY = 14 * gp.tileSize;
+
+        gp.obj[51] = new obj_spike();
+        gp.obj[51].worldX = 27 * gp.tileSize;
+        gp.obj[51].worldY = 17 * gp.tileSize;
+        
+        gp.obj[52] = new obj_spike();
+        gp.obj[52].worldX = 28 * gp.tileSize;
+        gp.obj[52].worldY = 15 * gp.tileSize;
+
+        gp.obj[53] = new obj_spike();
+        gp.obj[53].worldX = 28 * gp.tileSize;
+        gp.obj[53].worldY = 18 * gp.tileSize;
+
+        gp.obj[54] = new obj_spike();
+        gp.obj[54].worldX = 29 * gp.tileSize;
+        gp.obj[54].worldY = 17 * gp.tileSize;
+
+        gp.obj[55] = new obj_spike();
+        gp.obj[55].worldX = 29 * gp.tileSize;
+        gp.obj[55].worldY = 14 * gp.tileSize;
+
+        gp.obj[56] = new obj_spike();
+        gp.obj[56].worldX = 30 * gp.tileSize;
+        gp.obj[56].worldY = 13 * gp.tileSize;
+
+        gp.obj[57] = new obj_spike();
+        gp.obj[57].worldX = 30 * gp.tileSize;
+        gp.obj[57].worldY = 16 * gp.tileSize;
     }
 }

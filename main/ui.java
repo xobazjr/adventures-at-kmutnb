@@ -219,6 +219,8 @@ public class ui {
         int y;
 
         if (gp.Player.life <= 0) {
+            gp.stopMusic();
+            gp.playSE(4);
             text = "You dead!";
             textLength = (int) g2.getFontMetrics().getStringBounds(text, g2).getWidth();
             x = gp.screenWidth / 2 - textLength / 2;

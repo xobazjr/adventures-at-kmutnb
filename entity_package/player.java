@@ -178,8 +178,6 @@ public class player extends entity {
                             gp.obj[i] = null;
                             gp.Player.life--;
                             gp.ui.gameFinished = true;
-                            gp.stopMusic();
-                            gp.playSE(4);
                         } else {
                             gp.playSE(5);
                             gp.obj[i] = null;
