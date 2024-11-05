@@ -62,13 +62,13 @@ public class keyhandler implements KeyListener {
                 gp.gameState = gp.pauseState;
                 pause = true;
                 if (pauseMusic) {
-                    gp.stopMusic();
+                    gp.music.stop();
                 }
             } else if (gp.gameState == gp.pauseState) {
                 gp.gameState = gp.playState;
                 pause = false;
                 if (pauseMusic) {
-                    gp.playMusic(0);
+                    gp.music.play();
                 }
             }
         }
