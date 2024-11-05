@@ -17,6 +17,7 @@ public class player extends entity {
     public final int screenX;
     public final int screenY;
     public int hasKey = 0;
+    public boolean start = false;
 
     public player(gamepanel gp, keyhandler keyH) {
         this.gp = gp;
@@ -132,35 +133,61 @@ public class player extends entity {
 
             switch (objectName) {
                 case "Paper grade F":
-                    gp.playSE(2);
-                    hasKey++;
-                    gp.obj[i] = null;
-                    gp.ui.showMessage("You got a paper grade F!");
+                    if (gp.Player.start) {
+                        gp.playSE(2);
+                        hasKey++;
+                        gp.obj[i] = null;
+                        gp.ui.showMessage("You got a paper grade F!");
+                    }
+
                     break;
                 case "Boots":
-                    gp.playSE(1);
-                    speed += 4;
-                    gp.obj[i] = null;
-                    gp.ui.showMessage("Speed boosted!");
+                    if (gp.Player.start) {
+                        gp.playSE(1);
+                        speed += 4;
+                        gp.obj[i] = null;
+                        gp.ui.showMessage("Speed boosted!");
 
-                    Timer timer = new Timer();
-                    timer.schedule(new TimerTask() {
-                        @Override
-                        public void run() {
-                            speed -= 4;
-                            timer.cancel();
-                            gp.ui.showMessage("Speed boost ended");
-                        }
-                    }, 5000);
+                        Timer timer = new Timer();
+                        timer.schedule(new TimerTask() {
+                            @Override
+                            public void run() {
+                                speed -= 4;
+                                timer.cancel();
+                                gp.ui.showMessage("Speed boost ended");
+                            }
+                        }, 5000);
+                    }
+
                     break;
                 case "Sathit":
-                    if (hasKey >= 6) {
+                    if (!gp.Player.start) {
+                        gp.Player.start = true;
+                    } else if (hasKey >= 6) {
                         gp.ui.gameFinished = true;
                         gp.stopMusic();
                         gp.playSE(3);
                     } else {
                         gp.ui.showMessage("You need to find the paper: " + hasKey + "/6");
                     }
+                    break;
+                case "Spike":
+                    if (gp.Player.start) {
+                        if (gp.Player.life == 1) {
+                            gp.playSE(5);
+                            gp.obj[i] = null;
+                            gp.Player.life--;
+                            gp.ui.gameFinished = true;
+                            gp.stopMusic();
+                            gp.playSE(4);
+                        } else {
+                            gp.playSE(5);
+                            gp.obj[i] = null;
+                            gp.Player.life--;
+                            gp.ui.showMessage("Oh shit");
+                        }
+                    }
+
                     break;
             }
         }

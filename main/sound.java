@@ -15,6 +15,8 @@ public class sound {
         soundURL[1] = getClass().getResource("/assets/sound/drinking-energy.wav");
         soundURL[2] = getClass().getResource("/assets/sound/pick-up-paper-sound.wav");
         soundURL[3] = getClass().getResource("/assets/sound/finished-sound.wav");
+        soundURL[4] = getClass().getResource("/assets/sound/dead.wav");
+        soundURL[5] = getClass().getResource("/assets/sound/damage.wav");
     }
 
     public void setFile(int i) {

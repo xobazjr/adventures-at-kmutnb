@@ -73,43 +73,57 @@ public class ui {
 
         g2.setFont(maru_monica);
         g2.setColor(Color.white);
-
         // TITLE STATE
         if (gp.gameState == gp.titileState) {
             drawTitleScreen();
-        }
-        // PLAY STATE
-        if (gp.gameState == gp.playState && !gameFinished) {
-            drawPlayerLife();
-            playTime += (double) 1 / 60;
-        }
+        } else if (gp.Player.start) {
 
-        // PAUSE STATE
-        else if (gp.gameState == gp.pauseState && !gameFinished) {
-            drawPauseScreen();
-        }
+            // PLAY STATE
+            if (gp.gameState == gp.playState && !gameFinished) {
+                drawPlayerLife();
+                playTime += (double) 1 / 60;
+            }
 
-        // FINISH STATE
-        if (gameFinished) {
-            drawGameFinishScreen();
-            gp.gameThread = null;
-        } else if (gp.gameState != gp.titileState) {
-            g2.drawImage(keyImage, gp.tileSize / 2, (gp.tileSize / 4) * 41, gp.tileSize, gp.tileSize, null);
-            g2.drawString("x = " + gp.Player.hasKey + "/6", 82, gp.tileSize * 11);
+            // FINISH STATE
+            if (gameFinished) {
+                drawGameFinishScreen();
+                gp.gameThread = null;
+            } else if (gp.gameState != gp.titileState) {
+                g2.drawImage(keyImage, gp.tileSize / 2, (gp.tileSize / 4) * 41, gp.tileSize, gp.tileSize, null);
+                g2.drawString("x = " + gp.Player.hasKey + "/6", 82, gp.tileSize * 11);
 
-            // TIME
-            g2.drawString("Time: " + dFormat.format(playTime), gp.tileSize * 13, 65);
+                // TIME
+                g2.drawString("Time: " + dFormat.format(playTime), gp.tileSize * 13, 65);
+
+                // PAUSE STATE
+                if (gp.gameState == gp.pauseState && !gameFinished) {
+                    drawPauseScreen();
+                }
+
+                // MANUAL
+                g2.drawString("MUTE: M", gp.tileSize * 13, gp.tileSize * 10);
+                g2.drawString("PAUSE: P", gp.tileSize * 13, gp.tileSize * 11);
+
+                // MESSAGE
+                if (messageOn) {
+                    g2.setFont(maru_monica.deriveFont(20f));
+                    g2.drawString(message, gp.tileSize / 2, gp.tileSize * 5);
+                }
+            }
+        } else {
+            // PAUSE STATE
+            if (gp.gameState == gp.pauseState && !gameFinished) {
+                drawPauseScreen();
+            }
 
             // MANUAL
             g2.drawString("MUTE: M", gp.tileSize * 13, gp.tileSize * 10);
             g2.drawString("PAUSE: P", gp.tileSize * 13, gp.tileSize * 11);
 
-            // MESSAGE
-            if (messageOn) {
-                g2.setFont(maru_monica.deriveFont(20f));
-                g2.drawString(message, gp.tileSize / 2, gp.tileSize * 5);
-            }
+            //SHOW MESSAGE EVENT
+            g2.drawString("Looking for a teacher", (gp.tileSize / 2) * 11, gp.tileSize);
         }
+
     }
 
     public void drawPlayerLife() {
@@ -193,7 +207,9 @@ public class ui {
         int x = getXforCenteredText(text);
         int y = gp.screenHeight / 2;
         g2.drawString(text, x, y);
-        drawPlayerLife();
+        if (gp.Player.start) {
+            drawPlayerLife();
+        }
     }
 
     public void drawGameFinishScreen() {
@@ -202,23 +218,32 @@ public class ui {
         int x;
         int y;
 
-        text = "You don't get an F anymore!";
-        textLength = (int) g2.getFontMetrics().getStringBounds(text, g2).getWidth();
-        x = gp.screenWidth / 2 - textLength / 2;
-        y = gp.screenHeight / 2 - gp.tileSize;
-        g2.drawString(text, x, y);
+        if (gp.Player.life <= 0) {
+            text = "You dead!";
+            textLength = (int) g2.getFontMetrics().getStringBounds(text, g2).getWidth();
+            x = gp.screenWidth / 2 - textLength / 2;
+            y = (gp.screenHeight / 2 - gp.tileSize / 2) - 20;
+            g2.drawString(text, x, y);
+        } else {
+            text = "You don't get an F anymore!";
+            textLength = (int) g2.getFontMetrics().getStringBounds(text, g2).getWidth();
+            x = gp.screenWidth / 2 - textLength / 2;
+            y = gp.screenHeight / 2 - gp.tileSize;
+            g2.drawString(text, x, y);
 
-        text = "Your Time is " + dFormat.format(playTime) + "!";
-        textLength = (int) g2.getFontMetrics().getStringBounds(text, g2).getWidth();
-        x = gp.screenWidth / 2 - textLength / 2;
-        y = gp.screenHeight / 2 + gp.tileSize * 3;
-        g2.drawString(text, x, y);
+            text = "Your Time is " + dFormat.format(playTime) + "!";
+            textLength = (int) g2.getFontMetrics().getStringBounds(text, g2).getWidth();
+            x = gp.screenWidth / 2 - textLength / 2;
+            y = gp.screenHeight / 2 + gp.tileSize * 3;
+            g2.drawString(text, x, y);
 
-        text = "Congratulations!";
-        textLength = (int) g2.getFontMetrics().getStringBounds(text, g2).getWidth();
-        x = gp.screenWidth / 2 - textLength / 2;
-        y = gp.screenHeight / 2 + gp.tileSize;
-        g2.drawString(text, x, y);
+            text = "Congratulations!";
+            textLength = (int) g2.getFontMetrics().getStringBounds(text, g2).getWidth();
+            x = gp.screenWidth / 2 - textLength / 2;
+            y = gp.screenHeight / 2 + gp.tileSize;
+            g2.drawString(text, x, y);
+        }
+
     }
 
     public int getXforCenteredText(String text) {

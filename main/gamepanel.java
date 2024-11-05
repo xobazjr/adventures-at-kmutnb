@@ -42,7 +42,7 @@ public class gamepanel extends JPanel implements Runnable {
 
     // ENTITY AND OBJECT
     public player Player = new player(this, keyH);
-    public superobject obj[] = new superobject[10];
+    public superobject obj[] = new superobject[100];
 
     // GAME STATE
     public int gameState;
@@ -142,30 +142,46 @@ public class gamepanel extends JPanel implements Runnable {
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-
         Graphics2D g2 = (Graphics2D) g;
 
         // TITLE SCREEN
         if (gameState == titileState) {
             ui.draw(g2);
-        }
-        // OTHERS
-        else {
-            // TILE
-            tileM.draw(g2);
+        } else {
 
-            // OBJECT
-            for (int i = 0; i < obj.length; i++) {
-                if (obj[i] != null) {
-                    obj[i].draw(g2, this);
+            if (Player.start) {
+                // TILES
+                tileM.draw(g2);
+                
+                // OBJECTS
+                for (int i = 0; i < obj.length; i++) {
+                    if (obj[i] != null) {
+                        obj[i].draw(g2, this);
+                    }
                 }
+
+                // PLAYER
+                Player.draw(g2);
+
+                // UI
+                ui.draw(g2);
+            } else {
+                // TILES
+                tileM.draw(g2);
+
+                // Event
+                obj[6].draw(g2, this);
+
+                // PLAYER
+                Player.draw(g2);
+
+                // UI
+                ui.draw(g2);
+                
+                // SHOW MESSAGE
+                ui.showMessage("Looking for a teacher");
             }
 
-            // PLAYER
-            Player.draw(g2);
-
-            // UI
-            ui.draw(g2);
         }
 
         g2.dispose();
