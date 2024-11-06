@@ -9,7 +9,7 @@ This project is a part of Object Oriented Programming course created by Mr.Teera
 ## Objects
 <img hight="100" width="100" src="https://github.com/xobazjr/adventures-at-kmutnb/blob/main/assets/objects/paper-f.png"> <img hight="100" width="100" src="https://github.com/xobazjr/adventures-at-kmutnb/blob/main/assets/objects/energy-drink.png"> <img hight="100" width="100" src="https://github.com/xobazjr/adventures-at-kmutnb/blob/main/assets/objects/sathit.png">
 
-<img hight="100" width="100" src="https://github.com/xobazjr/adventures-at-kmutnb/blob/main/assets/objects/faii-dek-ped.png"> <img hight="100" width="100" src="https://github.com/xobazjr/adventures-at-kmutnb/blob/main/assets/objects/spike.png">
+<img hight="100" width="100" src="https://github.com/xobazjr/adventures-at-kmutnb/blob/main/assets/objects/faii-dek-ped.png"> <img hight="100" width="100" src="https://github.com/xobazjr/adventures-at-kmutnb/blob/main/assets/objects/spike.png"> <img hight="100" width="100" src="https://github.com/xobazjr/adventures-at-kmutnb/blob/main/assets/objects/slime.png">
 
 ## Tile
 <img hight="100" width="100" src="https://github.com/xobazjr/adventures-at-kmutnb/blob/main/assets/tile/building-sideways.png"> <img hight="100" width="100" src="https://github.com/xobazjr/adventures-at-kmutnb/blob/main/assets/tile/building-straight.png"> <img hight="100" width="100" src="https://github.com/xobazjr/adventures-at-kmutnb/blob/main/assets/tile/floor.png">
