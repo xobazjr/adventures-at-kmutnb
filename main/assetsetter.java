@@ -4,6 +4,7 @@ import object.obj_boots;
 import object.obj_faii;
 import object.obj_key;
 import object.obj_sathit;
+import object.obj_slime;
 import object.obj_spike;
 
 public class assetsetter {
@@ -402,7 +403,7 @@ public class assetsetter {
         gp.obj[96].worldX = 43 * gp.tileSize;
         gp.obj[96].worldY = 30 * gp.tileSize;
 
-        gp.obj[97] = new obj_spike();
+        gp.obj[97] = new obj_slime();
         gp.obj[97].worldX = 44 * gp.tileSize;
         gp.obj[97].worldY = 26 * gp.tileSize;
 
@@ -425,5 +426,13 @@ public class assetsetter {
         gp.obj[102] = new obj_spike();
         gp.obj[102].worldX = 46 * gp.tileSize;
         gp.obj[102].worldY = 29 * gp.tileSize;
+
+        gp.obj[103] = new obj_slime();
+        gp.obj[103].worldX = 5 * gp.tileSize;
+        gp.obj[103].worldY = 19 * gp.tileSize;
+
+        gp.obj[103] = new obj_slime();
+        gp.obj[103].worldX = 14 * gp.tileSize;
+        gp.obj[103].worldY = 44 * gp.tileSize;
     }
 }

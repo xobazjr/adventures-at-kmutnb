@@ -175,7 +175,7 @@ public class player extends entity {
                     break;
                 case "Spike":
                     if (gp.Player.start) {
-                        if (gp.Player.life == 1) {
+                        if (gp.Player.life <= 1) {
                             gp.playSE(5);
                             gp.obj[i] = null;
                             gp.Player.life--;
@@ -197,6 +197,21 @@ public class player extends entity {
                             gp.ui.gameFinished = true;
                         }
 
+                    }
+                    break;
+                case "Slime":
+                    if (gp.Player.start) {
+                        if (gp.Player.life <= 1) {
+                            gp.playSE(8); 
+                            gp.obj[i] = null;
+                            gp.Player.life-=2;
+                            gp.ui.gameFinished = true;
+                        } else {
+                            gp.playSE(8); 
+                            gp.obj[i] = null;
+                            gp.Player.life-=2;
+                            gp.ui.showMessage("Oh shit");
+                        }
                     }
                     break;
             }
