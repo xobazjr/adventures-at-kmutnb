@@ -23,7 +23,7 @@ This project is a part of Object Oriented Programming course created by Mr.Teera
 
 ## Class diagrame
 
-![](./class-diagrame.drawio.svg)
+![](./class-diagrame.drawio.png)
 
 <br/>
 <br/>
