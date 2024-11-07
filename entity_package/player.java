@@ -2,12 +2,12 @@ package entity_package;
 
 import main.gamepanel;
 import main.keyhandler;
+
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.util.Timer;
 import java.util.TimerTask;
-
 import javax.imageio.ImageIO;
 
 public class player extends entity {

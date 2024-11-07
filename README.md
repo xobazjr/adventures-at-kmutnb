@@ -21,6 +21,10 @@ This project is a part of Object Oriented Programming course created by Mr.Teera
 ## Hit Point
 <img hight="100" width="100" src="https://github.com/xobazjr/adventures-at-kmutnb/blob/main/assets/objects/heart-full.png"> <img hight="100" width="100" src="https://github.com/xobazjr/adventures-at-kmutnb/blob/main/assets/objects/heart-half.png"> <img hight="100" width="100" src="https://github.com/xobazjr/adventures-at-kmutnb/blob/main/assets/objects/heart-empty.png">
 
+## Class diagrame
+
+![](./class-diagrame.drawio.svg)
+
 <br/>
 <br/>
 
