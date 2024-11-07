@@ -69,6 +69,7 @@ public class keyhandler implements KeyListener {
                 pause = false;
                 if (pauseMusic) {
                     gp.music.play();
+                    gp.music.loop();
                 }
             }
         }
@@ -86,21 +87,21 @@ public class keyhandler implements KeyListener {
             }
 
         }
-        // if (code == KeyEvent.VK_G) {
-        // if (!pause) {
-        // if (godmode) {
-        // godmode = false;
-        // gp.Player.maxLife = 6;
-        // gp.Player.life = gp.Player.maxLife;
-        // gp.Player.speed -= 5;
-        // } else {
-        // godmode = true;
-        // gp.Player.maxLife = 500;
-        // gp.Player.life = gp.Player.maxLife;
-        // gp.Player.speed += 5;
-        // }
-        // }
-        // }
+        if (code == KeyEvent.VK_G) {
+            if (!pause) {
+                if (godmode) {
+                    godmode = false;
+                    gp.Player.maxLife = 6;
+                    gp.Player.life = gp.Player.maxLife;
+                    gp.Player.speed -= 5;
+                } else {
+                    godmode = true;
+                    gp.Player.maxLife = 500;
+                    gp.Player.life = gp.Player.maxLife;
+                    gp.Player.speed += 5;
+                }
+            }
+        }
 
     }
 
